@@ -1,13 +1,13 @@
 <script setup>
 import NavbarMenu from "./components/NavbarMenu.vue";
-import DataTable from "./components/DataTable.vue";
-import Vue from "vue";
+import FooterTest from "./components/FooterTest.vue";
+import PoPage from "./components/PoPage.vue";
 </script>
 
 <template>
   <NavbarMenu />
   <div class="container">
-    <div class="d-flex">
+    <!-- <div class="d-flex">
       <div class="p-2">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -17,7 +17,8 @@ import Vue from "vue";
         </nav>
       </div>
       <div class="ml-auto p-2">
-        <button class="btn btn-info">Add Data</button>
+        <button class="btn btn-info">Count</button>
+        <button class="btn btn-info ml-1">Add Data</button>
       </div>
     </div>
     <div class="card">
@@ -26,18 +27,19 @@ import Vue from "vue";
         <DataTable />
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
-    </div>
+    </div> -->
+    <PoPage />
+    {{menu}}
+    <footer><FooterTest/></footer>
+    <router-view></router-view>
   </div>
+
 </template>
 <script>
-  const posApp = {
-                menu:"Test",
-                submenu: "Menu",
-    }
-    const vm = new Vue(
-        {
-          el:"#app",
-          data:posApp
-        });
+export default {
+  data() {
+   menu : "Test" 
+  }
+};
 </script>
 <style scoped></style>

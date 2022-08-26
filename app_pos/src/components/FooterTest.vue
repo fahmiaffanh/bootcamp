@@ -1,0 +1,3 @@
+<template>
+Ini Footer
+</template>
