@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>Daftar Barang</title>
+</head>
+<body>
+  <%- include('.../partials/header.ejs', {variant: 'compact'}); %>
+    <div class="container">
+        <h2>Daftar Barang</h2>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Kategori</th>
+                <th scope="col">Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% if (barang.length > 0) { %>
+                    <% var no = 1;
+                    for (let br of barang) { %>
+                        <tr>
+                            <th scope="row"><%= no %></th>
+                            <td><%= br.barang %></td>
+                            <td><%= br.kategori %></td>
+                            <td><%= br.unit %></td>
+                        </tr>
+                    <%
+                    no++;
+                }
+                } %>
+              
+            </tbody>
+          </table>
+    </div>
+    <hr>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
